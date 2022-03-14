@@ -2,12 +2,13 @@
 Exil - A Open-source automatic grading system
 
 ## Development process
-- (1/6): Think ideas. (Done)
-- (2/6): Gather infomations. (Done)
-- (3/6): Code GUI. (Done)
-- (4/6): Code core features. (Done)
-- (5/6): Link between GUI and core features. (Working)
-- (6/6): Patch code, fix bugs.
+- (1/7): Think ideas. (Done)
+- (2/7): Gather infomations. (Done)
+- (3/7): Code GUI. (Done)
+- (4/7): Code core features. (Done)
+- (5/7): Link between GUI and core features. (Working)
+- (6/7): Patch code, fix bugs. (Pending)
+- (7/7): Test, review and release build. (Pending)
 
 ## Main features
 Support 3 languages:
