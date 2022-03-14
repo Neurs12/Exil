@@ -20,16 +20,16 @@ Completely customizable:
 - You can edit the default GUI or just create a new one.
 - Grade testing is explained carefully.
 
-Easy to use, require little or no setup.
+Easy to use, require little or no setup:
 - Install Compilers:
 - Edit settings.
 - Create profiles and test cases folder.
 
-Have options to disable/enable profile(s), problem(s) to make a custom grade test.
-
 Support 2 types of IO:
 - stdin/stdout.
 - file IO.
+
+Have options to disable/enable profile(s), problem(s) to make a custom grade test.
 
 Handle large data in a short time using Python.
 
