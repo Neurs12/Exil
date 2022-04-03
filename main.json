@@ -1,0 +1,16 @@
+{
+  "port": 8080,
+  "max-allowed-profiles": "auto",
+  "profiles-location": "D:\\Exil\\profiles",
+  "test-cases-location": "D:\\Exil\\test-cases",
+  "langpath": {
+    "c": "[environment variables]",
+    "python": "[environment variables]",
+    "pascal": "[environment variables]"
+  },
+  "support": [
+    "pascal",
+    "python",
+    "c"
+  ]
+}

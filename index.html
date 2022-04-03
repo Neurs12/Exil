@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/passive-events.js"></script>
+    <script src="scripts/materialize.js"></script>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/materialize.css">
+
+    <link href="fonts/MaterialIcons.css" rel="stylesheet">
+    <link href="fonts/MaterialIconsOutlined.css" rel="stylesheet">
+
+    <title>Exil - A Open-source automatic grading system</title>
+</head>
+<body>
+    <nav class="navbar-fixed unselectable">
+        <div class="nav-wrapper">
+            <a class="brand-logo">&nbsp;&nbsp;&nbsp;Exil</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li id="home" class="in-use"><a onclick="if(document.getElementById('home').classList.contains('in-use') == false) M.toast({html: 'Loading...'+atob('Jm5ic3A7PGRpdiBjbGFzcz0icHJlbG9hZGVyLXdyYXBwZXIgc21hbGwgYWN0aXZlIj48ZGl2IGNsYXNzPSJzcGlubmVyLWxheWVyIHNwaW5uZXItYmx1ZS1vbmx5Ij48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciBsZWZ0Ij48ZGl2IGNsYXNzPSJjaXJjbGUiPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImdhcC1wYXRjaCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciByaWdodCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4='), displayLength: 1000}); Home()""><i class="material-icons left">home</i>Home</a></li>
+                <li id="settings"><a onclick="checkSettings(); Settings()"><i class="material-icons left">settings</i>Settings</a></li>
+                <li><a onclick=><i class="material-icons-outlined left">info</i>About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content" class="content unselectable">
+        <table class="highlight responsive-table">
+            <tbody>
+                <tr id="cell">
+                    <th>Profiles</th>
+                </tr>
+                <tbody id="profiles">
+                </tbody>
+                <tr id="iotypes">
+                    <th>IO Types</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button class="btn waves-effect waves-light" id="start" onclick="StartTest()"><span class="material-icons left" style="line-height: 1.8; font-size: 20px">play_arrow</span></span>&nbsp;start</button> <button class="btn waves-effect waves-light" id="refresh" onclick="M.Toast.dismissAll(); M.toast({html: 'Refreshing...'+atob('Jm5ic3A7PGRpdiBjbGFzcz0icHJlbG9hZGVyLXdyYXBwZXIgc21hbGwgYWN0aXZlIj48ZGl2IGNsYXNzPSJzcGlubmVyLWxheWVyIHNwaW5uZXItYmx1ZS1vbmx5Ij48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciBsZWZ0Ij48ZGl2IGNsYXNzPSJjaXJjbGUiPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImdhcC1wYXRjaCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciByaWdodCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4='), displayLength: 1000}); Refresh()"><span class="material-icons left" style="line-height: 1.8; font-size: 20px">refresh</span>&nbsp;refresh</button>
+    </div> 
+    <script>
+        M.AutoInit();
+        function checkSettings(){
+            if(document.getElementById("settings").classList.contains("in-use") == false){
+                M.Toast.dismissAll(); M.toast({html: 'Preparing...'+atob('Jm5ic3A7PGRpdiBjbGFzcz0icHJlbG9hZGVyLXdyYXBwZXIgc21hbGwgYWN0aXZlIj48ZGl2IGNsYXNzPSJzcGlubmVyLWxheWVyIHNwaW5uZXItYmx1ZS1vbmx5Ij48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciBsZWZ0Ij48ZGl2IGNsYXNzPSJjaXJjbGUiPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImdhcC1wYXRjaCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciByaWdodCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4='), displayLength: 1000});
+            }
+        }
+        M.toast({html: 'Initializing services...'+atob('Jm5ic3A7PGRpdiBjbGFzcz0icHJlbG9hZGVyLXdyYXBwZXIgc21hbGwgYWN0aXZlIj48ZGl2IGNsYXNzPSJzcGlubmVyLWxheWVyIHNwaW5uZXItYmx1ZS1vbmx5Ij48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciBsZWZ0Ij48ZGl2IGNsYXNzPSJjaXJjbGUiPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImdhcC1wYXRjaCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciByaWdodCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4='), displayLength: 1000});
+        setTimeout(() => {
+            welcome = new XMLHttpRequest();
+            welcome.onreadystatechange = function(){ 
+                if (welcome.readyState == 4 && (welcome.status == 200 || welcome.status == 304)){
+                    M.toast({html: 'Welcome, '+welcome.responseText+"!", displayLength: 2500})
+                }
+            }
+            welcome.open("GET", "http://localhost:8080/getuser", true);
+            welcome.send(null);
+        }, 1000)
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.tooltipped');
+            var instances = M.Tooltip.init(elems);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+        function Saving(){
+            M.toast({html:"Applying..."+atob("Jm5ic3A7PGRpdiBjbGFzcz0icHJlbG9hZGVyLXdyYXBwZXIgc21hbGwgYWN0aXZlIj48ZGl2IGNsYXNzPSJzcGlubmVyLWxheWVyIHNwaW5uZXItYmx1ZS1vbmx5Ij48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciBsZWZ0Ij48ZGl2IGNsYXNzPSJjaXJjbGUiPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImdhcC1wYXRjaCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48ZGl2IGNsYXNzPSJjaXJjbGUtY2xpcHBlciByaWdodCI+PGRpdiBjbGFzcz0iY2lyY2xlIj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4="),displayLength:2e3});
+        }
+
+        function ohno(str){
+            M.toast({html:str+"Folder path not exist!"});
+        }
+    </script>
+</body>
+</html>

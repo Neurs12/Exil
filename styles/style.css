@@ -1,0 +1,49 @@
+body, html{
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+.navbar-fixed{
+    background-color: rgba(98, 0, 238);
+    position: sticky !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    top: 0 !important;
+}
+
+.btn{
+    background-color: #6200EE !important;
+}
+
+.names{
+    color: black;
+}
+
+.badge{
+    color: black !important;
+}
+
+.IOfont{
+    text-align: center;
+    font-size: small;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after{
+    background-color: #6200EE !important;
+    border: #6200EE !important;
+}
+
+.switch label input[type=checkbox]:checked+.lever{
+    background-color: #BB86FC !important;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after{
+    background-color: #6200EE !important;
+}
+
+.unselectable{
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
