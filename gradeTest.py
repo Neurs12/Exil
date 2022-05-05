@@ -25,7 +25,7 @@ def CheckLimit(time_limit):
     """
     while True:
         try:
-            if run_test.poll() == None and time.time() - start_time > time_limit + 0.5:
+            if run_test.poll() == None and time.perf_counter() - start_time > time_limit + 0.5:
                 run_test.kill()
         except:
             pass
@@ -131,7 +131,7 @@ def Test(config: dict, problem: str, profile: str, inp_out_type, time_limit: flo
                     run_test = subprocess.Popen(f"{output_path}.exe")
 
                 #Get execute time stamp.
-                start_time = time.time()
+                start_time = time.perf_counter()
 
                 #While running, thread will start doing thier job.
                 #Check if the running program exceeded time limit.
@@ -141,7 +141,7 @@ def Test(config: dict, problem: str, profile: str, inp_out_type, time_limit: flo
                 run_test.communicate()
 
                 #When finished, get time when it's finished.
-                run_time = time.time() - start_time
+                run_time = time.perf_counter() - start_time
 
                 #Define function result variable to store output.
                 result = ""
@@ -176,7 +176,7 @@ def Test(config: dict, problem: str, profile: str, inp_out_type, time_limit: flo
                     run_test = subprocess.Popen(f"{output_path}.exe", stdin=subprocess.PIPE, stdout=subprocess.PIPE)
 
                 #Get execute time stamp.
-                start_time = time.time()
+                start_time = time.perf_counter()
 
                 #While running, thread will start doing thier job.
                 #Check if the running program exceeded time limit.
@@ -189,7 +189,7 @@ def Test(config: dict, problem: str, profile: str, inp_out_type, time_limit: flo
                 result = run_test.communicate()
 
                 #When finished, get time when it's finished.
-                run_time = time.time() - start_time
+                run_time = time.perf_counter() - start_time
 
                 #Get the result decoded. Delete all \n and \r, only plain text.
                 result = str(result[0].decode()).replace("\n", "").replace("\r", "")
@@ -231,6 +231,3 @@ def Test(config: dict, problem: str, profile: str, inp_out_type, time_limit: flo
     
     #And return subs
     return subs
-
-
-    
